@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="mss.css">
+
+    <style>
+    
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+section {
+    background-color: #f0f0f0;
+    padding: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="number"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color:000;
+height:1 rem;}
+
+form{
+ background-color: #1a1d38;   
+}
+form h2{
+    text-transform: capitalize; 
+}
+</style>
+
+
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="./media/GSCIbadan (1).png" alt="" srcset=""></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="speaker.html">Speakers</a></li>
+                <li><a href="form.html" class="active">Registration</a></li>
+                <li><a href="countdown.html">countdown</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Registration</h1>
+        <form>
+            <section>
+                <h2>Attendee's Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone"><br><br>
+            </section>
+            <section> 
+
+                <h2>attendance Options</h2>
+                <label for="day_1">will attend day 1  :</label>
+                <select id="day" name="day">
+                    <option value="not-sure">day 1 only</option>
+                    <option value="comitted">both days</option>
+                </select><br><br>
+               
+            </section>
+            <button type="submit">Register Now</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 the global shapers Website</p>
+    </footer>
+
+</body>
+</html>
+
+
+

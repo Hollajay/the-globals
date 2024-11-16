@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create account</title>
+    <link rel="stylesheet" href="mss.css">
+    <style>
+        .container{
+            height: 90vh;
+            width:100% ;
+            position: relative; 
+            display: flex;   
+        }     
+
+span{
+   font-size: 50px; 
+   padding:30px ;  
+   text-transform: capitalize; 
+   color: red;
+}
+.righ-content {
+    display: flex;
+    font-size: 30px;  
+}
+
+.left-content{
+    font-size: 30px; 
+}
+
+.container h3{
+    font-weight: 400;
+    font-style: italic; 
+    font-size: 20px;
+    color: red;
+    padding:20px ;
+    text-transform: capitalize;
+}
+
+    </style>
+</head>    t f y
+<body>
+<div class="countdown">
+    <header>
+        <div class="logo"><img src="./media/GSCIbadan (1).png " alt=""></div>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="speaker.html">Speakers</a></li>
+                <li><a href="form.html">Registration</a></li>
+                <li><a href="countdown.html">countdown</a></li>
+            </ul>
+        </nav>
+    </header> 
+
+    <section class="container">
+       <div class="ima"> <img src="./media/GSCIbadan (1).png" alt="image on screen"></div>
+    <div class="section-content">
+        <div class="left-content"> <h1>welcome to Reskilling for the Future:<span> Empowering</span> Communities through  Emerging Trends and <span>Technologies </span></h1>
+            <h3>live countdown</h3> 
+        </div>
+    
+<div class="righ-content"> 
+    <div >
+    <p id="days">00 </p>
+    <span>days</span>
+</div> 
+
+<div>
+    <p  id="hours">00 </p>
+    <span>hours</span>
+</div>
+
+<div >
+    <p id="minue">00 </p>
+    <span>minutes</span>
+</div>
+
+<div >
+    <p id="seconds">00 </p>
+    <span>seconds</span>
+</div>
+
+</div>
+   
+   
+</section>    
+    <script>
+    var countdown = new Date('nov 20, 2024 00:00:00').getTime()
+    var i =setInterval(function () {
+       var now = new Date().getTime();
+       var distance = countdown - now;
+
+       var days = Math.floor(distance/(1000 * 60 * 60 * 24));
+       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+       var minue = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60 ));
+       var seconds = Math.floor((distance % (1000 * 60 ))/ 1000);
+
+document.getElementById('days').innerHTML = days;
+document.getElementById('hours').innerHTML = hours;
+document.getElementById('minue').innerHTML = minue;
+document.getElementById('seconds').innerHTML = seconds;
+
+
+    },1000 )
+</script> 
+
+<footer class="foot">
+    <p>&copy; 2024  the global shapers Website</p>
+
+</footer>
+
+    </body>
+    </html>

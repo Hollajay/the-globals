@@ -1,0 +1,224 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a1d38;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.logo{
+    height: 6rem ;
+    width: 6rem;
+}
+.logo img{
+    width: 100%;
+    height: 100% ;
+    margin: auto;
+    object-fit: cover;
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: #6495ed;  
+}
+
+.hero {
+    background-image: url('./media/slide.jpeg');
+    background-size: cover;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-transform: capitalize;
+}
+.event-info {
+    text-align: center;
+}
+
+.event-info h1 {
+    font-size: 48px;
+}
+
+.event-info p {
+    font-size: 18px;
+}
+
+.event-info a{
+    text-decoration: none;
+    color: #fff; 
+}
+.event-overview {
+    padding: 2em;
+}
+
+.key-info {
+    padding: 2em;
+    background-color: #f0f0f0;
+}
+
+.key-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.key-info li {
+    margin-bottom: 10px;
+}
+
+button{
+    height:5rem;
+    width: 6rem;
+    color: #fff;
+    background-color:#1a1d38;
+    border-radius:7px ;
+}
+
+footer {
+    background-color: #1a1d38;;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+    text-transform: capitalize;
+
+}
+
+/*  coundown 
+.container{
+    height: 40vh;
+    width:100% ;
+    background-image: url('./media/GSCIbadan (1).png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding:10px ;
+}*/
+img{
+    width:auto ;
+    height: 25rem;
+    position: relative;
+}
+
+.cover{
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+}
+
+.launch{
+    position: absolute;
+    left: 50%;
+    bottom:10% ;
+}
+/* working on speakers  */
+nav a.active {
+    color: #03a9f4;
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+.speakers-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.speaker {
+    background-color: #f0f0f0;
+    padding: 1em;
+    margin: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.speaker img {
+    width: 100%;
+    height: 200px;
+    object-fit:contain ;
+    border-radius: 50%;
+}
+.speaker h2 {
+    margin-top: 10px;
+}
+
+/*  working on schedele */
+.schedule-container {
+    display: flex;
+    flex-direction: column;
+}     
+
+.day {
+    background-color: #c9c4b5;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.day h2 {
+    margin-top: 0;
+}
+
+.day ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.day li {
+    margin-bottom: 10px;
+}
+
+.time {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.session {
+    display: inline-block;
+    width: 300px;
+}
+
+.speaker {
+    font-size: 14px;
+    color: #666;
+}
+
+/* working on regiser */

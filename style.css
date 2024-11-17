@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 :root{
     --white-color:#ffff;
     --hover-blue:#6495ed; 
@@ -26,7 +29,7 @@ header .logo img{
  width: 80px;
  height: 80px;
 }
-.toggle-icon{
+header .toggle-icon{
     color: var(--white-color);
     display:none;
 }
@@ -399,4 +402,105 @@ footer {
         text-transform: capitalize;
     
     }
+}
+
+
+.form-section{
+    background-image: url('./media/slide.jpeg');
+    width: 100%;
+    height: 90vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+  
+}
+.form-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.form-div{
+    width: 400px;
+    height: 500px;
+    border: 1px solid black;
+    padding: 30px;
+     background-color: var(--white-color);
+     border-radius: 16px;
+}
+.form-div .header-text{
+    margin-top: 20px;
+    text-align: center;
+    color: var(--bg-color);
+}
+.google-btn{
+    border: 1px solid var(--bg-color);
+    background-color: transparent;
+    border-radius: 4px;
+    width: 100%;
+    height: 45px;
+   font-size: 18px;
+   margin: 10px 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   transition: all .4s ease-in-out;
+}
+.google-btn:hover{
+    border: 1px solid var(--hover-blue);
+}
+.google-btn img{
+    width: 25px;
+    height: 25px;
+}
+.dash-line{
+    width: 100%;
+    border: 1px dashed rgb(210, 210, 210);
+    margin: 10px 0;
+}
+.input_div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+}
+.input_div label{
+    font-style: italic;
+    font-weight: 600;
+}
+.inputs-sub-div{
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    border-bottom: 1px solid var(--gray-color);
+    border-right:1px solid var(--gray-color) ;
+}
+.inputs-sub-div input{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    outline: none;
+    padding: 5px;
+    background-color: transparent;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--bg-color);
+}
+
+
+.submit-btn{
+    width: 120px;
+    height: 40px;
+    border: none;
+    background-color: var(--hover-blue);
+    border-radius: 4px;
+    transition: all .4s ease-in-out;
+}
+.submit-btn:hover{
+    background-color: #5271ab;
+    color: white;
 }

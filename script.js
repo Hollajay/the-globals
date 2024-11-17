@@ -31,10 +31,9 @@ document.getElementById('seconds').innerHTML = seconds;
     }
 
 
-
-
+  
   import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
-  import { getAuth , GoogleAuthProvider,signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+  import { getAuth , GoogleAuthProvider,signInWithPopup , createUserWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
   const firebaseConfig = {
     apiKey: "AIzaSyBjFlyr6DQipbmYQ2gIgiPEoIpuh82IJ4c",
     authDomain: "the-global-9bf56.firebaseapp.com",
@@ -49,14 +48,32 @@ document.getElementById('seconds').innerHTML = seconds;
   const provider = new GoogleAuthProvider()
 
 
+  const submit = document.getElementById("submit")
+    submit.addEventListener("click", function(e){
+      e.preventDefault()
+      const email = document.getElementById('email').value
+      const password = document.getElementById('password').value
+     
+      createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    const user = userCredential.user;
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error;
+  });
+    })
 
  const GoogleBtn = document.getElementById('google-btn')
  GoogleBtn.addEventListener('click', function(){
     signInWithPopup(auth, provider)
   .then((result) => {  
     const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
     const user = result.user;
+    console.log(user);
+    // The href link  should take you to the google meet 
+    window.location.href = "/";
+
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
@@ -64,3 +81,21 @@ document.getElementById('seconds').innerHTML = seconds;
     const credential = GoogleAuthProvider.credentialFromError(error);
   });
  })
+
+                  //smooth scroll
+ document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault(); 
+
+    const targetId = this.getAttribute('href').substring(1); 
+    const targetSection = document.getElementById(targetId);
+
+   
+    if (targetSection) {
+      targetSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start', 
+      });
+    }
+  });
+});

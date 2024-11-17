@@ -6,7 +6,7 @@
     <title>Registration</title>
     <link rel="stylesheet" href="style.css">
 
-    <style>
+    <!-- <style>
     
 form {
     display: flex;
@@ -52,7 +52,7 @@ form{
 form h2{
     text-transform: capitalize; 
 }
-</style>
+</style> -->
 
 
 </head>
@@ -66,32 +66,40 @@ form h2{
                 <li><a href="schedule.html">Schedule</a></li>
                 <li><a href="speaker.html">Speakers</a></li>
                 <li><a href="form.html">Registration</a></li>
-                <li><a href="countdown.html">countdown</a></li>
+                <!-- <li><a href="countdown.html">countdown</a></li> -->
             </ul>
         </nav>
         <i id="menutoggle1" class="fa-solid fa-bars toggle-icon" onclick="toggleMenu()"></i>
     </header>
 
-    <main>
-        <h1>Registration</h1>
-        <form>
-            <section>
-                <h2>Attendee's Information</h2>
+    <section class="form-section">
+        <div class="form-container">
+        <div class="form-div">
+            <h1 class="header-text">Registration Form</h1>
+            <Button id="google-btn" class="google-btn"><img src="./media/google.png" alt="">Register with Google</Button>
+            <div class="dash-line"></div>
+        <form >
+            <!-- <div class="input_div">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name"><br><br>
+             <div class="inputs-sub-div"><input id="name"  type="text" placeholder="Joshua Vivian"> </div>
+                   
+            </div> -->
+            <div class="input_div">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email"><br><br>
-                <label for="phone">Phone:</label>
-                <input type="tel" id="phone" name="phone"><br><br>
+                <div class="inputs-sub-div"><input id="email" type="email" placeholder="ade@gmail.com"></div>
                 
-            </section>    
+            </div > 
+            <div class="input_div">
+                <label for="phone">Password:</label>
+                <div class="inputs-sub-div"><input id="password" type="password" placeholder="081012345678"></div>
+            </div>   
+            <button  class="submit-btn" id="submit" type="submit">Register Now</button>      
         </form>
-        <button id="google-btn" type="submit">Register Now</button>
-    </main>
+       </div>
+    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 the global shapers Website</p>
-    </footer>
+    
     <script src="script.js" defer  type="module"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+
 *{
     padding: 0;
     margin: 0;
@@ -16,6 +17,39 @@ html{
 a{
     text-decoration: none;
 }
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+  } 
+  .toast {
+    display: flex;
+    align-items: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s, transform 0.5s;
+  }
+  
+  .toast.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .toast.success {
+    background: #4caf50;
+  }
+  
+  .toast.error {
+    background: #f44336;
+  }
+
                                 /* header */
 header{
     width: 100%;
@@ -28,17 +62,18 @@ header{
 header .logo img{
  width: 80px;
  height: 80px;
-}
+} 
 header .toggle-icon{
     color: var(--white-color);
     display:none;
-}
+} 
 #menuList {
     display: flex;
 }
 header nav ul{
     display: flex;
     gap: 20px;
+    list-style: none;
 }
 header nav ul a{
     color: var(--white-color);
@@ -234,7 +269,7 @@ footer {
         gap: 20px;
         background-color: var(--hover-blue);
         padding: 15px;
-       list-style: none;
+       list-style: flex;
     }
     header nav ul a{
         color: var(--white-color);

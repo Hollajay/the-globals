@@ -1,3 +1,25 @@
+function showToast(message, type = "success") {
+  const toastContainer = document.getElementById("toast-container");
+  const toast = document.createElement("div");
+  toast.className = `toast ${type}`;
+  toast.innerText = message;
+
+  toastContainer.appendChild(toast);
+
+  // Show the toast
+  setTimeout(() => {
+    toast.classList.add("show");
+  }, 100);
+
+  // Remove the toast after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove("show");
+    setTimeout(() => {
+      toast.remove();
+    }, 500);
+  }, 3000);
+}
+
 var countdown = new Date('nov 20, 2024 00:00:00').getTime()
     var i =setInterval(function () {
        var now = new Date().getTime();
@@ -57,10 +79,15 @@ document.getElementById('seconds').innerHTML = seconds;
       createUserWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     const user = userCredential.user;
+    showToast("User created successfully!", "success");
+    window.location.href = "/";
   })
   .catch((error) => {
     const errorCode = error.code;
     const errorMessage = error;
+    // alert(error)
+    showToast(` ${error.message}`, "error");
+    
   });
     })
 
@@ -71,6 +98,7 @@ document.getElementById('seconds').innerHTML = seconds;
     const credential = GoogleAuthProvider.credentialFromResult(result);
     const user = result.user;
     console.log(user);
+    showToast("Signed in with Google successfully!", "success");
     // The href link  should take you to the google meet 
     window.location.href = "/";
 
@@ -79,6 +107,7 @@ document.getElementById('seconds').innerHTML = seconds;
     const errorMessage = error.message;
     const email = error.customData.email;
     const credential = GoogleAuthProvider.credentialFromError(error);
+    showToast(`Error: ${error.message}`, "error");
   });
  })
 

@@ -41,16 +41,25 @@ document.getElementById('seconds').innerHTML = seconds;
 
             //  nav bar     
 
-    function toggleMenu() {
-        const menuList = document.querySelector(".nav ul");
+    // function toggleMenu() {
+    //     const menuList = document.querySelector(".nav ul");
     
-        // Toggle the display style of the top menu
-        if (menuList.style.display === "flex") {
-            menuList.style.display = "none";
-        } else {
-            menuList.style.display = "flex";
-        }
-    }
+    //     // Toggle the display style of the top menu
+    //     if (menuList.style.display === "flex") {
+    //         menuList.style.display = "none";
+    //     } else {
+    //         menuList.style.display = "flex";
+    //     }
+    // }
+
+    document.getElementById("menutoggle1").addEventListener("click", function () {
+      const menuList = document.querySelector(".nav ul");
+  
+      // Toggle the display style of the top menu
+      menuList.style.display = menuList.style.display === "flex" ? "none" : "flex";
+  });
+
+
 
 
   

@@ -20,7 +20,7 @@ function showToast(message, type = "success") {
   }, 3000);
 }
 
-var countdown = new Date('nov 20, 2024 00:00:00').getTime()
+var countdown = new Date('nov 20, 2024 18:00:00').getTime()
     var i =setInterval(function () {
        var now = new Date().getTime();
        var distance = countdown - now;
@@ -89,7 +89,7 @@ document.getElementById('seconds').innerHTML = seconds;
   .then((userCredential) => {
     const user = userCredential.user;
     showToast("User created successfully!", "success");
-    window.location.href = "/";
+    window.location.href = "https://meet.google.com/puy-mfnb-nzz";
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -109,7 +109,7 @@ document.getElementById('seconds').innerHTML = seconds;
     console.log(user);
     showToast("Signed in with Google successfully!", "success");
     // The href link  should take you to the google meet 
-    window.location.href = "/";
+    window.location.href = "https://meet.google.com/puy-mfnb-nzz";
 
   }).catch((error) => {
     const errorCode = error.code;

@@ -20,23 +20,32 @@ function showToast(message, type = "success") {
   }, 3000);
 }
 
-var countdown = new Date('nov 20, 2024 18:00:00').getTime()
-    var i =setInterval(function () {
-       var now = new Date().getTime();
-       var distance = countdown - now;
+var countdown = new Date('nov 20, 2024 18:00:00').getTime();
+var i = setInterval(function () {
+    var now = new Date().getTime(); 
+    var distance = countdown - now; 
 
-       var days = Math.floor(distance/(1000 * 60 * 60 * 24));
-       var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-       var minue = Math.floor((distance % (1000 * 60 * 60 )) / (1000 * 60 ));
-       var seconds = Math.floor((distance % (1000 * 60 ))/ 1000);
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24)); 
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)); 
+    var minute = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)); 
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000); 
 
-document.getElementById('days').innerHTML = days;
-document.getElementById('hours').innerHTML = hours;
-document.getElementById('minutes').innerHTML = minue;
-document.getElementById('seconds').innerHTML = seconds;
+    document.getElementById('days').innerHTML = days;
+    document.getElementById('hours').innerHTML = hours;
+    document.getElementById('minutes').innerHTML = minute;
+    document.getElementById('seconds').innerHTML = seconds;
 
+    if (distance <= 0) {
+        clearInterval(i); // Stop the countdown
+        document.getElementById('days').innerHTML = "00";
+        document.getElementById('hours').innerHTML = "00";
+        document.getElementById('minutes').innerHTML = "00";
+        document.getElementById('seconds').innerHTML = "00"; 
+        console.log("Countdown finished!");
+    }
 
-    },1000 )
+}, 1000); // Update every second
+
 
 
             //  nav bar     

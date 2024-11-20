@@ -4,7 +4,7 @@ function showToast(message, type = "success") {
   toast.className = `toast ${type}`;
   toast.innerText = message;
 
-  toastContainer.appendChild(toast);
+
 
   // Show the toast
   setTimeout(() => {
@@ -92,16 +92,23 @@ document.getElementById('seconds').innerHTML = seconds;
     window.location.href = "https://meet.google.com/puy-mfnb-nzz";
   })
   .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error;
-    // alert(error)
-    showToast(` ${error.message}`, "error");
-    
-  });
+    if (error.code === "auth/email-already-in-use") {
+        showToast("Email already in use. Redirecting...", "info");
+        window.location.href = "https://meet.google.com/puy-mfnb-nzz";
+    } else {
+        showToast(`Error: ${error.message}`, "error");
+    }
+});
     })
 
  const GoogleBtn = document.getElementById('google-btn')
  GoogleBtn.addEventListener('click', function(){
+  const user = auth.currentUser;
+    if (user) {
+        // User is already signed in, redirect to the Google Meet link
+        showToast("User already signed in. Redirecting...", "info");
+        window.location.href = "https://meet.google.com/puy-mfnb-nzz?authuser=0";
+    } else {
     signInWithPopup(auth, provider)
   .then((result) => {  
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -109,7 +116,7 @@ document.getElementById('seconds').innerHTML = seconds;
     console.log(user);
     showToast("Signed in with Google successfully!", "success");
     // The href link  should take you to the google meet 
-    window.location.href = "https://meet.google.com/puy-mfnb-nzz";
+    window.location.href = "https://meet.google.com/puy-mfnb-nzz?authuser=0";
 
   }).catch((error) => {
     const errorCode = error.code;
@@ -118,7 +125,9 @@ document.getElementById('seconds').innerHTML = seconds;
     const credential = GoogleAuthProvider.credentialFromError(error);
     showToast(`Error: ${error.message}`, "error");
   });
+}
  })
+
 
                   //smooth scroll
  document.querySelectorAll('.nav a[href^="#"]').forEach(anchor => {
